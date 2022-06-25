@@ -47,15 +47,17 @@ var a = 10;
 var a = 20; // this is redeclare
 console.log(a) // 20
 
+/* 
+  let b = 10;
+  let b = 20; // Uncaught SyntaxError: Identifier 'b' has already been declared
+  console.log(b)
+*/
 
-let b = 10;
-let b = 20; // Uncaught SyntaxError: Identifier 'b' has already been declared
-console.log(b)
-
-
-const c = 10;
-const c = 20; // Uncaught SyntaxError: Identifier 'b' has already been declared
-console.log(c)
+/* 
+  const c = 10;
+  const c = 20; // Uncaught SyntaxError: Identifier 'b' has already been declared
+  console.log(c)
+*/
 
 
 console.log(d); // undefined
