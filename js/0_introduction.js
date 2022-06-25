@@ -24,6 +24,11 @@
 
   styling console : 
   - Directive %c
+  console.log('Hello from %cJS %cfile', "color:red;font-size:40px", "color:blue;font-size:20px");
 */
 
-console.log('Hello from %cJS %cfile', "color:red;font-size:40px", "color:blue;font-size:20px");
+
+/*
+  ES6: 
+  Ecma Script 6, Ecma internation is an industry association dedicated to the standardization of information and communication system.
+*/
