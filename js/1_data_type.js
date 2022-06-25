@@ -20,3 +20,55 @@ console.log(typeof true); // boolean
 console.log(typeof false); // boolean
 console.log(typeof undefined); // undefined
 console.log(typeof null); // null
+
+
+
+/*
+  Var :
+  1-  redeclare               => yes
+  2-  access before declare   => undefined
+  3-  varible scope drama 
+      [Added to window]       => yes
+
+  Let : 
+  1-  redeclare               => no with error
+  2-  access before declare   => Error with specific line 
+  3-  varible scope drama 
+      [Added to window]       => no
+
+  Const : 
+  1-  redeclare               => no with error
+  2-  access before declare   => Error with specific line 
+  3-  varible scope drama 
+      [Added to window]       => no
+*/
+
+var a = 10;
+var a = 20; // this is redeclare
+console.log(a) // 20
+
+
+let b = 10;
+let b = 20; // Uncaught SyntaxError: Identifier 'b' has already been declared
+console.log(b)
+
+
+const c = 10;
+const c = 20; // Uncaught SyntaxError: Identifier 'b' has already been declared
+console.log(c)
+
+
+console.log(d); // undefined
+var d = 1;
+
+
+console.log(e); // Uncaught ReferenceError: Cannot access 'e' before initialization
+let e = 1;
+
+
+console.log(f); // Uncaught ReferenceError: Cannot access 'f' before initialization
+const f = 1;
+
+
+var aa = 10;
+console.log(window.aa); // 10
