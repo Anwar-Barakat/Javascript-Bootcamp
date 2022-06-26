@@ -25,3 +25,28 @@ console.log(11 % 5); // 1
 let a = 1;
 console.log(a++) // 1
 console.log(++a) // 3   => because the a became 2
+
+
+
+/*
+  unary plus      => return number if its not a number
+  unary negation  => return number if its not a number with negates it
+*/
+
+console.log(100); // 100            => number 
+console.log(+"100"); // 100         => number
+console.log(+"-100"); // -100       => number
+console.log(+"Anwar"); // Nan
+console.log(+null); // 0 
+console.log(+false); // 0
+console.log(+true); // 0
+
+console.log(-100); // -100          => number 
+console.log(-"100"); // -100        => number
+console.log(-"-100"); // +100       => number
+console.log(-"Anwar"); // Nan
+console.log(-null); // 0 
+console.log(-false); // 0
+console.log(-true); // 0
+
+console.log(Number("100")); // 100  => number
