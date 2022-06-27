@@ -44,3 +44,27 @@ console.log(Math.random()); // 0.4291714273992244
 console.log(Math.trunc(99.9)) // 99
 console.log(Math.trunc(99.1)) // 99
 
+
+/*
+  challenge : 
+*/
+
+let a = 100;
+let b = 200.5;
+let c = 1e2;
+let d = 2.4;
+
+// find the smaller number in all variables and return it as a integer number :
+console.log(Math.round(Math.min(a, b, c, d))); // 2
+
+// use variables a & d one time to get the needed output (10000):
+console.log(Math.pow(a, Math.floor(d)));
+
+// Get integer (2) from d variable with 4 methods : 
+console.log(Math.floor(d));
+console.log(Math.trunc(d));
+console.log(Math.round(d));
+console.log(Math.ceil(d) - 1);
+
+// use variables b + d to get  (67 as a number)
+console.log(Number(Math.round(b) / Math.ceil(d))) // 67
