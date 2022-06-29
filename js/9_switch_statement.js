@@ -48,3 +48,47 @@ switch (day) {
             console.log('the day is Friday');
         break;
 }
+
+
+/*
+  Challenge : convert the switch statement to if statement
+*/
+
+let holidays = 3,
+    money = 0;
+
+switch (holidays) {
+    case 0:
+        money = 5000;
+        console.log(`My money is ${money}`);
+        break;
+
+    case 1:
+    case 2:
+        money = 3000;
+        console.log(`My money is ${money}`);
+        break;
+
+    case 3:
+        money = 2000;
+        console.log(`My money is ${money}`);
+        break;
+
+    default:
+        money = 1000;
+        console.log(`My money is ${money}`);
+}
+
+if (holidays == 0) {
+    money = 5000;
+    console.log(`My money is ${money}`);
+} else if (holidays == 1 || holidays == 2) {
+    money = 3000;
+    console.log(`My money is ${money}`);
+} else if (holidays == 3) {
+    money = 2000;
+    console.log(`My money is ${money}`);
+} else {
+    money = 1000;
+    console.log(`My money is ${money}`);
+}
