@@ -23,19 +23,35 @@ console.log(justNames)
 
 /*
   nested looping 
+
+  Loop control : 
+  1-  break
+  2-  continue
+  3-  label
 */
 
-let products = ['mouse', 'keyboard', 'screen', 'pen', 'pad', 'tablet'];
+let products = ['mouse', 'keyboard', 1, 'screen', 2, 'pen', 'pad', 'tablet', 3];
 let colors = ['red', 'blue', 'green', 'black'];
 let models = [2021, 2022];
 
-for (let k = 0; k < products.length; k++) {
+mainLoop: for (let k = 0; k < products.length; k++) {
+
+    if (products[k] == 'pen') {
+        break;
+    }
+
+    if (typeof products[k] === 'number') {
+        continue;
+    }
     console.log('-'.repeat(15));
     console.log('# ' + products[k])
     console.log('-'.repeat(15));
 
     console.log('Colors : \n')
-    for (let l = 0; l < colors.length; l++) {
+    nestedLoop: for (let l = 0; l < colors.length; l++) {
+        if (colors[l] === 'blue') {
+            break mainLoop;
+        }
         console.log(colors[l])
     }
 
@@ -44,6 +60,17 @@ for (let k = 0; k < products.length; k++) {
         console.log(models[m])
 
     }
+}
 
 
+/*
+  advanced loop
+*/
+
+let items = ['mouse', 'keyboard', 'screen', 'pen', 'pad', 'tablet'];
+let a = 0;
+for (;;) {
+    console.log(items[a])
+    a++;
+    if (a === items.length) break;
 }
