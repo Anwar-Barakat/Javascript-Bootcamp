@@ -1,5 +1,5 @@
 /*
-  Array method : 
+  Array methods (searching): 
   1-  indexOf(search element, from index[opt])
   2-  lastIndexOf(search element, from index[opt])
   3-  includes(value to find, from index [opt])
@@ -19,3 +19,36 @@ console.log(myFriend.includes("Ahmed")); // true
 console.log(myFriend.includes("Omar")); // true
 console.log(myFriend.includes("Omar", 2)); // true
 console.log(myFriend.includes("Omar", 3)); // false
+
+
+
+
+/*
+  Array methods (slicing) : 
+  1-  slice(start [opt], end [opt]) => return a new array
+  2-  splice(start [mand], deleteCount [opt], the items to add [opt])
+*/
+
+let theFriends = ["Anwar", "Ali", "Omar", "Saed", "Ahmed", "Ali"];
+console.log(theFriends); // (6) ['Anwar', 'Ali', 'Omar', 'Saed', 'Ahmed', 'Ali']
+console.log(theFriends.slice()); // (6) ['Anwar', 'Ali', 'Omar', 'Saed', 'Ahmed', 'Ali']
+console.log(theFriends.slice(2)); // (4) ['Omar', 'Saed', 'Ahmed', 'Ali']
+console.log(theFriends.slice(2, 4)); // (2) ['Omar', 'Saed'] => not including the end element
+console.log(theFriends.slice(-3)); // (3) ['Saed', 'Ahmed', 'Ali']
+console.log(theFriends.slice(1, -3)); // (2) ['Ali', 'Omar']
+console.log(theFriends.slice(-4, -2)); // (2) ['Omar', 'Saed']
+console.log(theFriends); // (6) ['Anwar', 'Ali', 'Omar', 'Saed', 'Ahmed', 'Ali']
+
+
+
+console.log(theFriends); // (6) ['Anwar', 'Ali', 'Omar', 'Saed', 'Ahmed', 'Ali']
+console.log(theFriends.splice(0, 0, "Samer", "Huda"));
+console.log(theFriends); // (8) ['Samer', 'Huda', 'Anwar', 'Ali', 'Omar', 'Saed', 'Ahmed', 'Ali']
+console.log(theFriends.splice(1, 1, "Galal"));
+console.log(theFriends); // (8) ['Samer', 'Galal', 'Anwar', 'Ali', 'Omar', 'Saed', 'Ahmed', 'Ali']
+console.log(theFriends.splice(2, 3, "Belal"));
+console.log(theFriends); // (6) ['Samer', 'Galal', 'Belal', 'Saed', 'Ahmed', 'Ali']
+console.log(theFriends.splice(4, 2));
+console.log(theFriends); // (4) ['Samer', 'Galal', 'Belal', 'Saed']
+console.log(theFriends.splice(1, 3, "Anwar"));
+console.log(theFriends); // (2) ['Samer', 'Anwar']
