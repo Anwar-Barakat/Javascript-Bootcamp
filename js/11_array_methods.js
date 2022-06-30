@@ -52,3 +52,39 @@ console.log(theFriends.splice(4, 2));
 console.log(theFriends); // (4) ['Samer', 'Galal', 'Belal', 'Saed']
 console.log(theFriends.splice(1, 3, "Anwar"));
 console.log(theFriends); // (2) ['Samer', 'Anwar']
+
+
+/*
+  array methods (joined) : 
+  1-  concat (array, array) => return a new array
+  2-  join(separator)
+*/
+
+let firstFriend = ["Anwar", "Ali", "Hani", "Samer"];
+let secondFriend = ["Sameh", "Osama"];
+let thirdFriend = ["Shady", "John"];
+
+let allFriend = firstFriend.concat(secondFriend);
+console.log(allFriend); // (6) ['Anwar', 'Ali', 'Hani', 'Samer', 'Sameh', 'Osama']
+
+allFriend = firstFriend.concat(secondFriend, theFriends);
+console.log(allFriend); // (8) ['Anwar', 'Ali', 'Hani', 'Samer', 'Sameh', 'Osama', 'Samer', 'Anwar']
+
+allFriend = firstFriend.concat(secondFriend, theFriends, 1, [2, 3]);
+console.log(allFriend); // (11) ['Anwar', 'Ali', 'Hani', 'Samer', 'Sameh', 'Osama', 'Samer', 'Anwar', 1, 2, 3]
+
+allFriend = firstFriend.join();
+console.log(allFriend); // Anwar,Ali,Hani,Samer
+
+allFriend = firstFriend.join("");
+console.log(allFriend); // AnwarAliHaniSamer
+
+allFriend = firstFriend.join(" ");
+console.log(allFriend); // Anwar Ali Hani Samer
+
+allFriend = firstFriend.join("-");
+console.log(allFriend); // Anwar-Ali-Hani-Samer
+
+
+allFriend = firstFriend.join("-").toUpperCase();
+console.log(allFriend); // ANWAR-ALI-HANI-SAMER
