@@ -28,3 +28,23 @@ function calculation(...numbers) {
 }
 
 console.log(calculation(1, 2, 3)); // final result is 6
+
+
+/*
+  anonymous function
+*/
+
+document.getElementById('button').onclick = function() {
+    console.log('show the button');
+}
+
+setTimeout(function() {
+    console.log('Hi Anwar')
+}, 2000);
+
+
+document.getElementById('button').onclick = sayHello;
+
+function sayHello() {
+    console.log('Hello Anwar')
+}
