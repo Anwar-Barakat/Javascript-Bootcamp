@@ -48,3 +48,40 @@ document.getElementById('button').onclick = sayHello;
 function sayHello() {
     console.log('Hello Anwar')
 }
+
+/*
+  nested function
+*/
+
+// Example 1 : 
+function sayMessage(firstName, lastName) {
+
+    let message = `Hi`;
+
+    function concating() {
+        return `${message} ${firstName} ${lastName}, how are you doing ?`;
+    }
+
+    return concating();
+}
+
+console.log(sayMessage('Anwar', 'Barakat')); // Hi Anwar Barakat, how are you doing ?
+
+
+// Example 2 : 
+function sayMessage(firstName, lastName) {
+
+    let message = `Hi`;
+
+    function concating() {
+        function getFullName() {
+            return `${firstName} ${lastName}`;
+        }
+
+        return `${message} ${getFullName()}, how are you doing ?`;
+    }
+
+    return concating();
+}
+
+console.log(sayMessage('Anwar', 'Barakat')); // Hi Anwar Barakat, how are you doing ?
