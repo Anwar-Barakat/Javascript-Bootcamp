@@ -87,3 +87,62 @@ console.log(add);
   ###################################
   200
 */
+
+
+/*
+  Higher order function (Reduce) practices : 
+*/
+
+let friendList = ['Anwar', 'Mohammed', 'Ali', 'Samer', 'Monica', 'Ismael'];
+
+// we wanna return the longest name
+let theLongest = friendList.reduce((acc, current) => {
+    console.log(`Accumlator is          => ${acc}`);
+    console.log(`Current Element is     => ${current}`);
+    console.log(`The longest            => ${acc.length > current.length ? acc : current}`);
+    console.log(`----------------------------`);
+    return acc.length > current.length ? acc : current;
+});
+console.log(theLongest);
+
+/*
+  Accumlator is          => Anwar
+  Current Element is     => Mohammed
+  The longest            => Mohammed
+  ----------------------------
+  Accumlator is          => Mohammed
+  Current Element is     => Ali
+  The longest            => Mohammed
+  ----------------------------
+  Accumlator is          => Mohammed
+  Current Element is     => Samer
+  The longest            => Mohammed
+  ----------------------------
+  Accumlator is          => Mohammed
+  Current Element is     => Monica
+  The longest            => Mohammed
+  ----------------------------
+  Accumlator is          => Mohammed
+  Current Element is     => Ismael
+  The longest            => Mohammed
+  ----------------------------
+  Mohammed
+*/
+
+
+// example 
+// we wanna remove @ character from the stiing below :  
+let removeChars = 'A@n@w@@a@@r';
+let finalString = removeChars.split("").filter((element) => {
+    return !element.startsWith('@')
+});
+
+console.log(finalString); // (5) ['A', 'n', 'w', 'a', 'r']
+
+let joinFinalString = finalString.join("");
+console.log(joinFinalString); // Anwar
+
+let reduceFinalString = finalString.reduce((acc, current) => {
+    return `${acc}${current}`
+});
+console.log(reduceFinalString); // Anwar
