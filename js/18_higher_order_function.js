@@ -34,3 +34,31 @@ function collecting(element) {
 
 let myArray = myNums.map(collecting)
 console.log(myArray); // (5) [2, 4, 6, 8, 10]
+
+
+
+
+/*
+    Challenge : 
+*/
+
+let swappingCase = "aNwAr";
+
+let sw = swappingCase.split("").map((element) => {
+    return element === element.toUpperCase() ? element.toLowerCase() : element.toUpperCase()
+}).join("");
+console.log(sw); // AnWaR
+
+
+let invertedNumbers = [-1, -20, 15, 100, -30, -10];
+let inv = invertedNumbers.map((element) => {
+    return -element === element ? element : -element;
+});
+console.log(inv); // (6) [1, 20, -15, -100, 30, 10]
+
+
+let ignoreNumbers = "Anw1321ar567";
+let ign = ignoreNumbers.split("").map((element) => {
+    return isNaN(parseInt(element)) ? element : '';
+}).join("");
+console.log(ign); // Anwar
