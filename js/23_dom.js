@@ -36,3 +36,25 @@ let theFirstFormInputValue = theFirstFormInput.value;
 // get the links : 
 let theLinks = document.links;
 let theFirstLink = theLinks[0].href
+
+
+/*
+  DOM : 
+  check attributes 
+*/
+
+let paragraphAttr = document.getElementsByTagName('p')[0]
+
+if (paragraphAttr.hasAttributes()) {
+
+    if (paragraphAttr.hasAttribute('data-scr')) {
+        if (paragraphAttr.getAttribute('data-src') === '')
+            paragraphAttr.removeAttribute('data-src');
+        else
+            paragraphAttr.setAttribute('data-src', 'new val');
+    } else {
+        console.log(`The data-src attribute is not found`);
+    }
+} else {
+    console.log(`The attributes is found`);
+}
