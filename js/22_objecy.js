@@ -25,6 +25,37 @@ let user = {
         console.log(`Hello`)
     }
 }
-console.log(user.age); // 24
 console.log(user.theName); // Anwar
+console.log(user.age); // 24
 console.log(user.sayHello()); // Hello
+
+
+/*
+  Objects : 
+  Dot Notation vs Bracket Notation
+  Dynamic Porperty Name
+*/
+
+let user_1 = {
+    theName: "Anwar",
+    "country of": "Syria",
+
+    // methods 
+    sayHello: function() {
+        console.log(`Hello`)
+    }
+}
+console.log(user_1["theName"]); // Anwar
+console.log(user_1["country of"]); // Syria
+console.log(user.sayHello()); // Hello
+
+let myVar = "country";
+
+let user_2 = {
+    theName: "Anwar",
+    country: "Syria"
+}
+console.log(user_2.theName); // Anwar
+console.log(user_2.country); // Syria
+console.log(user_2.myVar); // undefined
+console.log(user_2[myVar]); // Syria
