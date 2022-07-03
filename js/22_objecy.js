@@ -93,3 +93,32 @@ console.log(user_3.addresses.Syria.two); // Damascus
 console.log(user_3["addresses"]["Syria"]["two"]); // Damascus
 console.log(user_3["addresses"].Syria["two"]); // Damascus
 console.log(user_3.checkAvailability()); // not free
+
+
+
+/*
+  Objects:
+  create a new object methods 
+*/
+
+let user_4 = new Object({
+    theName: "Anwar",
+    age: 24,
+    doubleAge: function() {
+        return this.age * 2;
+    }
+});
+console.log(user_4); // {theName: 'Anwar', age: 24, doubleAge: ƒ}
+
+let ob = Object.create({});
+ob.age = 30;
+console.log(ob); // {age: 30}
+
+
+// create object to use it as a prototype
+let instanceOb = Object.create(user_4);
+console.log(instanceOb.theName); // Anwar
+console.log(instanceOb.age); // 24
+
+instanceOb.age = 30;
+console.log(instanceOb.age); // 30
