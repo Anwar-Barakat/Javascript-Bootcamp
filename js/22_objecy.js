@@ -59,3 +59,37 @@ console.log(user_2.theName); // Anwar
 console.log(user_2.country); // Syria
 console.log(user_2.myVar); // undefined
 console.log(user_2[myVar]); // Syria
+
+
+/*
+  Objects : 
+  Nested object 
+*/
+
+let user_3 = {
+    name: 'Anwar',
+    age: 24,
+    skills: ['html', 'css', 'js'],
+    available: false,
+    addresses: {
+        KSA: "Riyad",
+        Syria: {
+            one: "Yabroud",
+            two: "Damascus"
+        },
+    },
+    checkAvailability: function() {
+        return this.available == true ? `Free for work` : 'not free';
+    },
+}
+console.log(user_3.name); // Anwar
+console.log(user_3.age); // age
+console.log(user_3.skills); // (3) ['html', 'css', 'js'
+console.log(user_3.skills.join("-")); // html-css-js
+console.log(user_3.skills[2]); // js
+console.log(user_3.addresses.KSA); // Riyad
+console.log(user_3.addresses.Syria); // {one: 'Yabroud', two: 'Damascus'}
+console.log(user_3.addresses.Syria.two); // Damascus
+console.log(user_3["addresses"]["Syria"]["two"]); // Damascus
+console.log(user_3["addresses"].Syria["two"]); // Damascus
+console.log(user_3.checkAvailability()); // not free
