@@ -58,3 +58,34 @@ if (paragraphAttr.hasAttributes()) {
 } else {
     console.log(`The attributes is found`);
 }
+
+
+
+/*
+  DOM :
+  create and append elements 
+*/
+
+let myDiv = document.createElement('div');
+
+myDiv.className = "product";
+
+// two ways to append attribute to element : 
+let myAttribute = document.createAttribute('data-custom');
+
+myDiv.setAttributeNode(myAttribute)
+
+myDiv.setAttribute('my-test', 'testing')
+
+// add comment :
+let myComment = document.createComment('This comment from js');
+
+myDiv.appendChild(myComment);
+
+// append text to element : 
+let myText = document.createTextNode('My Text');
+
+myDiv.appendChild(myText);
+
+// append element to body : 
+document.body.appendChild(myDiv);
