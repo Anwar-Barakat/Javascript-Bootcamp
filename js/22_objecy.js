@@ -122,3 +122,43 @@ console.log(instanceOb.age); // 24
 
 instanceOb.age = 30;
 console.log(instanceOb.age); // 30
+
+
+
+/*
+  Objects: 
+  assign object method 
+*/
+
+let ob1 = Object.create({
+    prop1: 1,
+    meth1: function() {
+        return this.prop1
+    }
+});
+
+
+let ob2 = Object.create({
+    prop2: 2,
+    meth1: function() {
+        return this.prop2
+    }
+});
+
+
+let targetObject = Object.create({
+    prop1: 10,
+    prop3: 3,
+});
+
+let finalObject = Object.assign(targetObject, ob1);
+console.log(finalObject); // {prop1: 1, prop3: 3, meth1: ƒ}
+// important note : prop1 equal to 1 not 10   => from the first object.
+
+let newOb = Object.assign(targetObject, ob1, ob2);
+newOb.prop2 = 20;
+console.log(newOb.prop2); // 20
+
+
+let recentOb = Object.assign({}, ob1, { prop4: 4 });
+console.log(recentOb); // {prop4: 4, prop1: 1, prop3: 3, meth1: ƒ}
