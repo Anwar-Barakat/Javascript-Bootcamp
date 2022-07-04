@@ -27,6 +27,7 @@ document.forms[0].onsubmit = function(e) {
     }
 }
 
+
 /*
     Events 
 */
@@ -55,3 +56,33 @@ myElement.onclick = function() {
 myElement.onclick = function() {
     this.classList.toggle('active')
 }
+
+
+
+/*
+    Events : 
+    Dealing with elements : 
+*/
+
+let element = document.querySelector('.my-div');
+
+let createParagraph = document.createElement('p');
+
+// put element or text after/before that element 
+// (outer the element => will be siblings) 
+element.after("<div>another div</div>");
+
+element.before(createParagraph);
+
+
+
+// put element or text inside that element 
+// (inside the element => will be children) 
+element.append("<div>child elelment in the last</div>");
+
+element.prepend("<div>child elelment in front</div>");
+
+element.before(createParagraph);
+
+// remove the element from the page : 
+element.remove();
