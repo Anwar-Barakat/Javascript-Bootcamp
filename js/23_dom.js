@@ -89,3 +89,34 @@ myDiv.appendChild(myText);
 
 // append element to body : 
 document.body.appendChild(myDiv);
+
+
+/*
+  DOM Practice :  
+*/
+
+for (let i = 1; i <= 100; i++) {
+
+    let theElement = document.createElement('div');
+
+    let theHead = document.createElement('h1');
+
+    let theParagraph = document.createElement('p');
+
+    let theHeadingText = document.createTextNode(`The product ${i} title`);
+
+    let theParagraphText = document.createTextNode(`The product ${i} paragraph`);
+
+    theElement.className = "product";
+
+    theHead.appendChild(theHeadingText);
+
+    theParagraph.appendChild(theParagraphText)
+
+    theElement.appendChild(theHead)
+
+    theElement.appendChild(theParagraph)
+
+    document.body.appendChild(theElement)
+
+}
