@@ -120,3 +120,32 @@ for (let i = 1; i <= 100; i++) {
     document.body.appendChild(theElement)
 
 }
+
+
+/*
+  DOM : 
+  dealing with childrens
+*/
+
+let myElement = document.querySelector('.my-div')
+
+// get the element inside the parent as a collection :
+let childrens = myElement.children;
+
+let firstChildren = childrens[0].innerHTML = "children 1";
+
+// get the element inside the parent even the comment and spaces as a collection :
+let childrensWithComments = myElement.childNodes;
+
+// get the first child (maybe it is a comment):
+let theFirstChild = myElement.firstChild;
+
+// get the last child (maybe it is a comment):
+let theLastChild = myElement.lastChild;
+
+
+// get the first child (exclusively an element):
+let theFirstElementChild = myElement.firstElementChild;
+
+// get the last child (exclusively an element):
+let theLastElementChild = myElement.lastChild;
