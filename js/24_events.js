@@ -104,3 +104,26 @@ theDiv.style.cssText = "font-weight:bold; color:#ccc; margin:1rem 0.5rem";
 theDiv.style.removeProperty('color');
 
 theDiv.style.setProperty('background-color', '#f8f8f8', 'important');
+
+
+
+/*
+ DOM (traversing)
+*/
+
+let theSpan = document.getElementsByClassName('my-span');
+
+// get the next sibling of that element (maybe it is a comment)
+let theNextSibling = theSpan.nextSibling();
+
+// get the next sibling of that element (exclusively an element)
+let theNextElementSibling = theSpan.nextElementSibling();
+
+// get the previous sibling of that element (maybe it is a comment)
+let thePreviousSibling = theSpan.previousSibling();
+
+// get the previous sibling of that element (exclusively an element)
+let thePreviousElementSibling = theSpan.previousElementSibling();
+
+// Important traversing :
+let theSpanParent = theSpan.parentElement();
