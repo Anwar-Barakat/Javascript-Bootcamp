@@ -127,3 +127,20 @@ let thePreviousElementSibling = theSpan.previousElementSibling();
 
 // Important traversing :
 let theSpanParent = theSpan.parentElement();
+
+
+/*
+    AddEventListener :
+    Its important be : we can apply event on element not exists yet in the page.
+*/
+
+let myParagraph = document.querySelector('.my-paragraph');
+
+myParagraph.addEventListener('click',(e)=>{
+
+    if(e.target.className === 'active'){
+
+        // any action :
+        console.log('I have active class');
+    }
+});
