@@ -27,7 +27,7 @@
   setTimeout, clearTimeout
 
   parameter   => in the function
-  argument    => when we pass its value
+  argument    => the values when we pass to it
 */
 
 setTimeout(() => {
@@ -58,3 +58,61 @@ function hiUsername(username, age) {
   clearTimeout(counter)
  });
 
+
+
+ /*
+  BOM :
+  setInterval, clearInterval 
+ */
+
+setInterval(() => {
+    console.log('Hi Anwar'); // Hi Anwar  => every 1 second
+}, 1000);
+
+function hiAnwar() {
+  console.log("Hi Anwar"); 
+}
+
+setInterval(hiAnwar,1000) // Hi Anwar => every 1 second
+
+
+function userInfo(username, age) { 
+  console.log(`Hi ${username}, your age is ${age}`);
+ }
+
+//  we pass the argument after timeout :
+ setInterval(userInfo,1000,"Anwar",24) // Hi Anwar, your age is 24
+
+
+ let intervalCounter = setInterval(hiAnwar,1000)
+
+ let intervalStopBtn = document.getElementById('stop');
+
+ stopBtn.addEventListener('click',()=>{
+
+  // clearTimeout need handler to pause or stop it.
+  clearInterval(intervalCounter)
+ });
+
+
+ let myCounter = document.createElement('div');
+
+ let theValue = document.createTextNode('10');
+
+ myCounter.classList.add('counter')
+
+ myCounter.appendChild(theValue);
+
+ document.body.appendChild(myCounter)
+
+ let theCounter = document.querySelector('.counter')
+
+ function countDown() { 
+    theCounter.innerHTML -=1;
+
+    if(theCounter.innerHTML === "0"){
+      clearInterval(intervalCounter)
+    }
+  }
+
+  intervalCounter = setInterval(countDown,1000)
