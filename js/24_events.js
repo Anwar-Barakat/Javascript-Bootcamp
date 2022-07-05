@@ -86,3 +86,21 @@ element.before(createParagraph);
 
 // remove the element from the page : 
 element.remove();
+
+
+/*
+    Events : 
+    Dealing with element styling 
+*/
+
+let theDiv = document.querySelector('.my-div');
+
+theDiv.style.color = "red";
+
+theDiv.style.fontWeight = "bold";
+
+theDiv.style.cssText = "font-weight:bold; color:#ccc; margin:1rem 0.5rem";
+
+theDiv.style.removeProperty('color');
+
+theDiv.style.setProperty('background-color', '#f8f8f8', 'important');
