@@ -30,3 +30,38 @@ let [, i, j, , k = "Samer"] = myFriends;
 console.log(i); // Ali
 console.log(j); // Juhn
 console.log(k); // Juhn
+
+/*
+  Advanced Distructuring Array Example :
+*/
+
+let theFriend = [
+  "Anwar",
+  "Ali",
+  "Juhn",
+  "Omar",
+  ["Sami", "Mahmoud", ["Belal", "Saif"]],
+];
+
+let [, , , , [x, , [, y]]] = theFriend;
+
+// we want this output :
+console.log(x); // Sami
+console.log(y); // Saif
+
+/*
+  Destructuring Array => Swaping Variables 
+*/
+
+let book = "video";
+let video = "book";
+
+// first way (traditional way):
+let stash = book;
+
+book = video;
+
+video = stash;
+
+// second way (destructuring array) :
+[book, video] = [video, book];
