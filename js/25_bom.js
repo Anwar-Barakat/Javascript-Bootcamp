@@ -116,3 +116,50 @@ function userInfo(username, age) {
   }
 
   intervalCounter = setInterval(countDown,1000)
+
+
+
+/*
+  BOM : 
+  Scrolling : 
+  scrollTo(x, y, option) 
+  scrollBy(x, y, option) 
+*/
+
+window.scrollTo(500,1000);
+
+window.scrollBy(500,1000);
+
+window.scrollTo({
+  left:500,
+  top:1000,
+  behavior:"smooth"
+})
+
+window.scrollBy({
+  left:500,
+  top:1000,
+  behavior:"smooth"
+})
+
+let upBtn = document.getElementById('scrolling-to-top');
+
+window.addEventListener('scroll',()=>{
+
+  if(window.scrollY >=  800){
+
+    upBtn.style.display = 'block'
+  }else{
+
+    upBtn.style.display = 'none'
+  }
+});
+
+upBtn.addEventListener('click',()=>{
+
+  window.scrollTo({
+    left:0,
+    top:0,
+    behavior:"smooth",
+  })
+});
