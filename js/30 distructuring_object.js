@@ -62,8 +62,38 @@ function showInfo({ theName, theAge, skills: { css } } = username) {
 // use destructuring function parameter with alias
 showInfoormation();
 
-function showInfoormation({ theName : n, theAge : a, skills: { css : c } } = username) {
+function showInfoormation({
+  theName: n,
+  theAge: a,
+  skills: { css: c },
+} = username) {
   console.log(`Your name is ${n}`); // Your name is Anwar
   console.log(`Your age is ${a}`); // Your age  is Anwar
   console.log(`Your css skill progress is ${c}`); // Your css skill progress is 60
 }
+
+/*
+  Destructuring object & array practice : 
+*/
+
+const custome = {
+  theName: "Anwar",
+  theAge: 25,
+  skills: ["html", "css", "js"],
+  addresess: {
+    one: "damascus",
+    two: "yabroud",
+  },
+};
+
+({
+  theName: n,
+  theAge: a,
+  skills: [, , javascript],
+  addresess: { two },
+} = custome);
+
+console.log(`Your name is ${n}`);
+console.log(`Your age is ${a}`);
+console.log(`Your last skill is ${javascript}`);
+console.log(`You live in ${two}`);
