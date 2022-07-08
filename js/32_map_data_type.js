@@ -26,3 +26,4 @@ console.log(myNewMap.size); // 2
 myNewMap.set(true, "boolean");
 myNewMap.set({ address_1: "damas", address_2: "yabroud" }, "object");
 myNewMap.set(function sayHello() {}, "function");
+
