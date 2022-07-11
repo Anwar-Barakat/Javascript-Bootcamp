@@ -134,3 +134,35 @@ console.log(email.match(valid1)); // (5) ['a@g', 'o@g', 'A@Y', 'a@a', '1@1']
 let valid2 = /\w@\w.(com|net)/g;
 
 console.log(email.match(valid2)); // (4) ['a@g.com', 'o@g.net', 'A@Y.com', '1@1.com']
+
+/*
+  Regular Expression : 
+
+  Character Classes 
+  \b    => matches at the beginning or end of word     
+  \B    => doesn't matches at the beginning or end of word    
+  
+  test method 
+  pattern.test(input)
+  return either false or true
+*/
+
+let names = "Anwar Osama Ali Spam 1spam 111SPAM spam5 AspamB";
+
+let spamRegex = /spam/gi;
+
+console.log(names.match(spamRegex)); // (5) ['Spam', 'spam', 'SPAM', 'spam', 'spam']
+
+let startWithSpam = /\bspam/gi;
+
+console.log(names.match(startWithSpam)); // (2) ['Spam', 'spam']
+
+let endtWithSpam = /spam\b/gi;
+
+console.log(names.match(endtWithSpam)); // (3) ['Spam', 'spam', 'SPAM']
+
+let startAndEndWithSpam = /(\bspam|spam\b)/gi;
+
+console.log(names.match(startAndEndWithSpam)); // (4) ['Spam', 'spam', 'SPAM', 'spam']
+
+console.log(startAndEndWithSpam.test(names)); // true
