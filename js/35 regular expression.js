@@ -1,5 +1,5 @@
 /*
-  Regular expression : 
+  Regular Expression : 
 
   Modifier  => flags
   i         => case insensitive
@@ -24,7 +24,7 @@ let regex3 = /elzero/gi;
 console.log(myString.match(regex3)); // (2) ['Elzero', 'elzero']
 
 /*
-  Regular expression : 
+  Regular Expression : 
 
   Ranges :
   (x|y)       => x or y
@@ -66,3 +66,39 @@ let practice = "os1 os1os os2 os8 os8os";
 let practiceRegex = /os[5-9]os/gi;
 
 console.log(practice.match(practiceRegex)); // ['os8os']
+
+
+/*
+  Regular Expression :
+*/
+
+let theString = "AaBbcdefG123!234%^&*";
+
+let aTOzRegex = /[a-z]/g;
+
+console.log(theString.match(aTOzRegex)); // (6) ['a', 'b', 'c', 'd', 'e', 'f']
+
+let notaTozRegex = /[^a-z]/g;
+
+console.log(theString.match(notaTozRegex));
+// (14) ['A', 'B', 'G', '1', '2', '3', '!', '2', '3', '4', '%', '^', '&', '*']
+
+let AToZRegex = /[A-Z]/g;
+
+console.log(theString.match(AToZRegex)); // (3) ['A', 'B', 'G']
+
+let aedRegex = /[aed]/g;
+
+console.log(theString.match(aedRegex)); // (3) ['a', 'd', 'e']
+
+let notaedRegex = /[^aed]/g;
+
+console.log(theString.match(notaedRegex)); // (17) ...
+
+let allLetterRegex = /[a-zA-Z]/g;
+
+console.log(theString.match(allLetterRegex)); // (9) ['A', 'a', 'B', 'b', 'c', 'd', 'e', 'f', 'G']
+
+let specialChars = /[^a-zA-Z0-9]/g;
+
+console.log(theString.match(specialChars)); // (5) ['!', '%', '^', '&', '*']
