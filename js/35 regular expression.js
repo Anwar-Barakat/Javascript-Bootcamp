@@ -67,7 +67,6 @@ let practiceRegex = /os[5-9]os/gi;
 
 console.log(practice.match(practiceRegex)); // ['os8os']
 
-
 /*
   Regular Expression :
 */
@@ -102,3 +101,36 @@ console.log(theString.match(allLetterRegex)); // (9) ['A', 'a', 'B', 'b', 'c', 
 let specialChars = /[^a-zA-Z0-9]/g;
 
 console.log(theString.match(specialChars)); // (5) ['!', '%', '^', '&', '*']
+
+/*
+  Regular Expression : 
+
+  Character Classes 
+  .     => matches any char , except newline or other line terminators
+  \w    => matches word characters [a-z, A-Z, 0-9 and underscore]
+  \W    => matches non word characters [^a-z, A-Z, 0-9 and underscore]
+  \d    => matches digital from 0 - 9
+  \D    => matches non digital
+*/
+
+let email = "a@@@g....com a@g.com o@g.net A@Y.com A-b.com a@a.org 1@1.com";
+
+let dot = /./g;
+
+console.log(email.match(dot)); // (60) match even the space
+
+let word = /\w/g;
+
+console.log(email.match(word)); // (35)
+
+let valid = /\w@/g;
+
+console.log(email.match(valid)); // (6) ['a@', 'a@', 'o@', 'A@', 'a@', '1@']
+
+let valid1 = /\w@\w/g;
+
+console.log(email.match(valid1)); // (5) ['a@g', 'o@g', 'A@Y', 'a@a', '1@1']
+
+let valid2 = /\w@\w.(com|net)/g;
+
+console.log(email.match(valid2)); // (4) ['a@g.com', 'o@g.net', 'A@Y.com', '1@1.com']
