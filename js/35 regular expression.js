@@ -166,3 +166,63 @@ let startAndEndWithSpam = /(\bspam|spam\b)/gi;
 console.log(names.match(startAndEndWithSpam)); // (4) ['Spam', 'spam', 'SPAM', 'spam']
 
 console.log(startAndEndWithSpam.test(names)); // true
+
+/*
+  Regular Expression : 
+
+  Quantifiers 
+  n+      => one or more
+  n*      => zero or more 
+  n?      => zero or one
+*/
+
+let mails =
+  "a@nn.com anwar@gmail.com brkatanwar@gmail.net anwarBrkat@mail.info";
+
+let oldRegex = /\w@\w\w.(info|com)/gi;
+
+console.log(mails.match(oldRegex)); // ['a@nn.com']
+
+let recentRegex = /\w+@\w+.(info|com)/gi;
+
+console.log(mails.match(recentRegex)); // (3) ['a@nn.com', 'anwar@gmail.com', 'anwarBrkat@mail.info']
+
+let myNums = "0110 10 150 05120 0560 350 00";
+
+let numRegex = /0\d*0/gi; // start with 0 and digits number with 0 at the end
+
+console.log(myNums.match(numRegex)); // (4) ['0110', '05120', '0560', '00']
+
+let urls = "https://google.com http://facebook.com web.com";
+
+let httpORhttpsRegex = /https?/gi; // ? => means exists or not
+
+console.log(urls.match(httpORhttpsRegex)); // (2) ['https', 'http']
+
+let urlRegex = /(https?\/\/)?(www.|)?\w+.(com|net)/gi;
+
+/*
+  (/https?\/\/)?(www.|)?\w+.(com|net)/ : 
+
+  https?          => 's' maybe exists or not
+  (/https?\/\/)?  => https | http also maybe exist or not
+  \w+             => word
+  (com|net)       => end with com | net
+*/
+console.log(urls.match(urlRegex)); // (3) ['google.com', 'facebook.com', 'web.com']
+
+/*
+  Regular Expression 
+
+  Quantifiers : 
+  n{x}      => only x times
+  n{x,y}    => only from x to y times
+  n{x,}     => only at least x times
+*/
+let serials = "S100s s3000s s500000s s60549111s";
+
+console.log(serials.match(/s\d{3}s/gi)); // ['S100s']
+
+console.log(serials.match(/s\d{3,4}/gi)); // (4) ['S100', 's3000', 's5000', 's6054']
+
+console.log(serials.match(/s\d{6,}s/gi)); // (2) ['s500000s', 's60549111s']
