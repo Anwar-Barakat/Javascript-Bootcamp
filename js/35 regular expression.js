@@ -226,3 +226,34 @@ console.log(serials.match(/s\d{3}s/gi)); // ['S100s']
 console.log(serials.match(/s\d{3,4}/gi)); // (4) ['S100', 's3000', 's5000', 's6054']
 
 console.log(serials.match(/s\d{6,}s/gi)); // (2) ['s500000s', 's60549111s']
+
+/*
+  Regular Expression 
+
+  replace
+  replaceAll
+*/
+
+let text = "We love @ language because @ is exciting";
+
+let regex = /@/gi;
+
+console.log(text.replace(regex, "Javascript"));
+
+/*
+  Regular Expression 
+
+  Input validation
+*/
+
+document.getElementById("registerForm").onsubmit = () => {
+  let phoneInput = document.querySelector("[name=phone]").value; 
+
+  let phoneRegex = /\(\d{4}\)\s\d{4}-\d{4}/gi; // (1234) 1234-1234
+
+  let phoneValidation = phoneRegex.test(phoneInput);
+
+  if (phoneValidation === false) return false;
+
+  return true;
+};
