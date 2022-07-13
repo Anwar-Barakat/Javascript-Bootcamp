@@ -1,17 +1,36 @@
 /*
-  OOP :
+  OOP 
 
-  Construction Function
+  Prototype 
+  - Add to prototype chain
+  - Extend built in constuctor features
 */
-//? old way to create constuctor :
-// function User(id, name, salary) {
-//   this.user_id = id;
-//   this.username = name;
-//   this.user_salary = salary + 1000;
-// }
-//? old way to create constuctor :
-function User(id, name, salary) {
-  this.user_id = id;
-  this.username = name;
-  this.user_salary = salary + 1000;
+
+class User {
+  constructor(id, username) {
+    this.user_id = id;
+    this.username = username;
+  }
+
+  sayHello() {
+    return `Hello ${this.username}`;
+  }
 }
+
+let user1 = new User(1, "Anwar");
+
+console.log(User.prototype);
+
+User.prototype.sayWelcome = function () {
+  return `Welcome ${this.username}`;
+};
+
+Object.prototype.love = "Javascript";
+
+String.prototype.addDotBeforeAndAfter = function () {
+  return `.${this}.`;
+};
+
+let myString = "Anwar Barakat";
+
+console.log(myString.addDotBeforeAndAfter()); // .Anwar Barakat.
