@@ -33,3 +33,56 @@ console.log(firstUser.user_salary); // 5500
 console.log(firstUser.msg()); // Hi unknown, your salary is undefined
 
 console.log(firstUser.sayHello()); // Hi unknown, your salary is undefined
+
+/*
+  OOP : 
+
+  Inheritance
+*/
+
+class User1 {
+  constructor(id, username) {
+    this.i = id;
+    this.u = username;
+  }
+
+  sayHello() {
+    return `Hello ${this.u}`;
+  }
+}
+
+let userOne = new User(100, "Ali");
+
+// repeat your self 😑
+// class Admin {
+//   constructor(id, username, permission) {
+//     this.i = id;
+//     this.u = username;
+//     this.p = permission;
+//   }
+
+//   sayHello() {
+//     return `Hello ${this.u}`;
+//   }
+// }
+
+// use inheritence :
+class Admin extends User1 {
+  constructor(id, username, permission) {
+    super(id, username);
+    this.p = permission;
+  }
+}
+
+let admin = new Admin(1, "Anwar", "Admin");
+
+console.log(admin.i); // 1
+console.log(admin.u); // Anwar
+console.log(admin.p); // Admin
+
+class SuperAdmin {
+  constructor(id, username, permission, ability) {
+    super(id, username, permission);
+    this.ab = ability;
+  }
+}
