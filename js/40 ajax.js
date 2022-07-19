@@ -51,3 +51,38 @@ myRequest.onreadystatechange = () => {
     }
   }
 };
+
+/*
+  What is callback : 
+  a function that is passed into another one as an argument to 
+  be executed later
+
+  Example on callback hell
+*/
+
+function makeItRed(e) {
+  e.target.style.color = "red";
+}
+
+function sayHello() {
+  console.log("hi");
+}
+
+let btn = (document.getElementById("button").onclick = makeItRed);
+
+setTimeout(sayHello, 2000);
+
+setTimeout(() => {
+  console.log("Download Photo");
+
+  setTimeout(() => {
+    console.log("Resize Photo");
+
+    setTimeout(() => {
+      console.log("Add Logo");
+      setTimeout(() => {
+        console.log("Show them");
+      }, 4000);
+    }, 3000);
+  }, 2000);
+}, 1000);
