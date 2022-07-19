@@ -35,5 +35,19 @@ myRequest.onreadystatechange = () => {
 
   if (myRequest.readyState === 4 && myRequest.status === 200) {
     console.log(myRequest.responseText);
+
+    let myData = JSON.parse(myRequest.responseText);
+
+    console.log(myData);
+
+    for (let i = 0; i < myData.length; i++) {
+      let myDiv = document.createElement("div");
+
+      let repoName = document.createTextNode(myData[i].full_name);
+
+      myDiv.appendChild(repoName);
+
+      document.body.appendChild(myDiv);
+    }
   }
 };
