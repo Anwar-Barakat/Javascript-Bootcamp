@@ -59,3 +59,40 @@ let myPromise = new Promise((resolveFunction, rejectFunction) => {
 );
 
 console.log(myPromise); // good connection established
+
+/*
+  Promise : 
+
+  then    => promise is successfully use the resolved data
+  catch   => promise is failed, catch the error
+  finally => promise successfully or failed so, do something
+
+*/
+
+const thePromise = new Promise((resolveFunction, rejectFunction) => {
+  let employees = ["Anwar", "Ali", "Omar", "Mahmoud"];
+
+  // the promise is coming true
+  if (employees.length === 4) resolveFunction(employees);
+  else rejectFunction(Error(`Number of employees aren't four`));
+});
+
+thePromise.then((resolveValue) => {
+  resolveValue.length = 2;
+  return resolveValue;
+});
+
+thePromise.then((resolveValue) => {
+  resolveValue.length = 1;
+  return resolveValue;
+});
+
+thePromise.then((resolveValue) => {
+  console.log(`the employee name is ${resolveValue}`); // the employee name is Anwar
+});
+
+thePromise.catch((rejectedReason) => {
+  console.log(`number of employees isn't four`);
+});
+
+thePromise.finally(console.log("that will be execute in any situation"));
