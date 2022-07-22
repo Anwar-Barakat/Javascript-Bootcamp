@@ -96,3 +96,32 @@ thePromise.catch((rejectedReason) => {
 });
 
 thePromise.finally(console.log("that will be execute in any situation"));
+
+/*
+  Promise With XML
+*/
+
+const getData = (apiLink) => {
+  return new Promise((resolve, reject) => {
+    let myRequest = new XMLHttpRequest();
+
+    myRequest.onload = function () {
+      if (myRequest.readyState === 4 && myRequest.status === 200) {
+        resolve(JSON.parse(myRequest.responseText));
+      } else {
+        reject(Error("No data found"));
+      }
+    };
+
+    myRequest.open("GET", apiLink);
+
+    myRequest.send();
+  });
+};
+
+getData("https://api.github.com/users/Anwar-Barakat/repos")
+  .then((result) => {
+    result.length = 10;
+    return result;
+  })
+  .then((result) => console.log(result[0].name));
