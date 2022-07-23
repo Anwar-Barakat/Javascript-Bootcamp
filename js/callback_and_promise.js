@@ -255,3 +255,29 @@ async function readInfo() {
 }
 readInfo();
 
+/*
+  Practice : 
+  Async - Await with try, catch and finally
+*/
+
+const outPromise = new Promise((res, rej) => {
+  setTimeout(() => {
+    res("I am a bad promise");
+  }, 3000);
+});
+
+async function fetchData() {
+  console.log(`before fetch`);
+
+  try {
+    let myData = await fetch(
+      "https://api.github.com/users/Anwar-Barakat/repos"
+    );
+    console.log(await myData.json());
+  } catch (reason) {
+    console.log(Error(`Reason is : ${reason}`));
+  } finally {
+    console.log(`after fetch`);
+  }
+}
+fetchData();
